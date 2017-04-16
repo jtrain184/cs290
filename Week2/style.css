@@ -27,3 +27,10 @@ form{
 	top: 20px;
 }
 
+tbody tr:nth-of-type(odd) {
+    background: Coral;
+}
+
+tbody tr:nth-of-type(even) {
+    background: LightBlue;
+}
