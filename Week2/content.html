@@ -2,10 +2,116 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <title>title</title>
+  <title>Week2 html/css</title>
   <link rel="stylesheet" href="style.css" type="text/css">
  </head>
  <body>
-  
+  <table id="resultstable">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Week1</th>
+            <th>Week2</th>
+            <th>Week3</th>
+            <th>Week4</th>
+            <th>Week5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ernie</td>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+            <td>Fourth</td>
+            <td>Fifth</td>
+        </tr>
+        <tr>
+            <td>Bert</td>
+            <td>Did Not Finish</td>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+            <td>Fourth</td>
+        </tr>
+        <tr>
+            <td>Sara</td>
+            <td>Second</td>
+            <td>Third</td>
+            <td>Fifth</td>
+            <td>First</td>
+            <td>Did Not Finish</td>
+        </tr>
+           <tr>
+            <td>Mike</td>
+            <td>Third</td>
+            <td>Fourth</td>
+            <td>First</td>
+            <td>Did Not Finish</td>
+            <td>Second</td>
+        </tr>
+           <tr>
+            <td>Sue</td>
+            <td>Fourth</td>
+            <td>Fifth</td>
+            <td>Fourth</td>
+            <td>Second</td>
+            <td>First</td>
+        </tr>
+        <tfoot>
+    	  <tr>
+            <td colspan="2">Footer1</td>
+            <td colspan="4">Footer2</td>
+          </tr>
+        </tfoot>
+    </tbody>
+  </table>
+  <br />
+  Grocery List
+  <ul>
+	<li>Bread</li>
+	<li>Milk</li>
+	<li>Cheese</li>
+  </ul>
+  <div class="outer-content" align="left" >
+    <div class="inner-content" align="center">Inner content</div>
+  </div>
+  <br />
+  <br />
+  <form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get">
+  	<fieldset>
+  	  <legend>Get Form</legend>
+		<fieldset class="inner_fieldset">
+	      <label>Text here:
+	        <input type="text" name="text_input">
+	      </label>
+	    </fieldset>
+	    <br />
+	    <fieldset class="inner_fieldset">
+	      <label>Number Here:  
+	  	    <input type="number" name="numerical_input">
+	      </label>
+	    </fieldset>
+	    <br />
+        <fieldset class="inner_fieldset">
+        <label>Password:  
+  	      <input type="password" name="password_input">
+        </label>
+      </fieldset>
+      <br />
+      <fieldset class="inner_fieldset">
+      	<legend>Candy</legend>
+      	Select from:
+        <label>
+          <input type="radio" name="candy" value="Snickers" />Snickers</label>
+        <label>
+          <input type="radio" name="candy" value="Skittles" />Skittles</label>
+        <label>
+          <input type="radio" name="candy" value="Mentos" />Mentos</label>
+        <br />
+        <input type="submit" value="Submit" />
+      </fieldset>
+	</fieldset>
+  </form>
  </body>
 </html>

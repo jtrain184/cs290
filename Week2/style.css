@@ -1,0 +1,29 @@
+#resultstable tr > td:first-child { font-style: italic;}
+
+table{
+    border-style:solid;
+}
+th, td{
+    border-style:solid;
+}
+
+.outer-content{
+    width: 75%;
+    background-color: LightPink;
+    position: relative;
+    top: 20px;
+    float: left;
+}
+
+.inner-content{
+	width: 56.25%;
+	position:relative;
+	background-color: LightSkyBlue;
+	margin: 0 auto;
+}
+
+form{
+	position: relative;
+	top: 20px;
+}
+
