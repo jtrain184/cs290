@@ -18,6 +18,8 @@ function deepEqual(value1, value2) {
     	if (!(property in value1) || !deepEqual(value1[property], value2[property])) 
     		return false;
     }
+
+    return value1PropCount == value2PropCount;
 }
 
 
@@ -33,6 +35,10 @@ var testObject2 = {
 
 var testObject3 = null;
 
+var testObject5 = {
+    value1: 10
+}
+
 console.log(deepEqual(10, 10));
 console.log(deepEqual(10, 11));
 console.log(deepEqual(null, null));
@@ -40,3 +46,4 @@ console.log(deepEqual(testObject1, testObject2));
 console.log(deepEqual(testObject1, testObject3));
 var testObject4 = testObject1;
 console.log(deepEqual(testObject1, testObject4));
+console.log(deepEqual(testObject1, testObject5));
