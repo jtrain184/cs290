@@ -24,7 +24,6 @@ var MOUNTAINS = [
   function buildTable(data) {
     var newTable = document.createElement("table");
     var fields = Object.keys(data[0]);
-    console.log(fields);
     var headings = document.createElement("tr");
     fields.forEach(function(field){
         var headCell = document.createElement("th");
