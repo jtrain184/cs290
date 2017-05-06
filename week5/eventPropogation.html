@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+    #buttonHolder{
+        width: 150px;
+        height: 75px;
+        background-color: violet;
+    }
+
+    #innerButton{
+        position:relative;
+        height:25px;
+        top:25px;
+        margin-left:15%;
+        width:70%;
+    }
+
+    #output{
+        min-width:20px;
+        min-height:20px;
+        background-color:red;
+    }
+  </style>
+ </head>
+    <body>
+        <div id="buttonHolder">
+            <button id="innerButton">Nested Button</button>
+        </div>
+        <input type="checkbox" id="check"></input>
+        <div id="output"></div>
+        <form>
+          <fieldset>
+            <legend>Event Controls</legend>
+            <label>
+                Button stop propagation
+            </label>
+            <input type="checkbox" id="propCheck"/><br>
+            
+            <label>
+                Checkbox prevent default
+            </label>
+            <input type="checkbox" id="defaultCheck"/>
+          </fieldset>
+        </form>
+        <script src="events.js"></script>
+    </body>
+</html>
