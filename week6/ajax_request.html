@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p></p>
+  </body>
+      <script>
+      var req = new XMLHttpRequest();
+      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Corvallis,or&appid=fa7d80c48643dfadde2cced1b1be6ca1", false);
+      req.send(null);
+      console.log(JSON.parse(req.responseText));
+      var output = document.querySelector("p");
+      output.textContent = req.responseText;
+    </script>
+</html>
