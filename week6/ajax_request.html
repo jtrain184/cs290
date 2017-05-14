@@ -7,10 +7,12 @@
   </body>
       <script>
       var req = new XMLHttpRequest();
-      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Corvallis,or&appid=fa7d80c48643dfadde2cced1b1be6ca1", false);
+      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?id=4744106&units=imperial&appid=fa7d80c48643dfadde2cced1b1be6ca1", false);
       req.send(null);
-      console.log(JSON.parse(req.responseText));
+      var weatherObject = JSON.parse(req.responseText);
       var output = document.querySelector("p");
-      output.textContent = req.responseText;
+      var sunsetTime = new Date(weatherObject.sys.sunset * 1000);
+      output.textContent = sunsetTime;
+      console.log(weatherObject.sys.sunset * 1000);
     </script>
 </html>

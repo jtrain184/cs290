@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var apiKey = 'fa7d80c48643dfadde2cced1b1be6ca1';
+
+      document.addEventListener('DOMContentLoaded', bindButtons);
+
+      function bindButtons(){
+        document.getElementById('zipSubmit').addEventListener('click', function(event){
+          var req = new XMLHttpRequest();
+          var payload = {zip:null};
+          payload.zip = document.getElementById('zipCode').value;
+          console.log(payload);
+          req.open('POST', 'http://api.openweathermap.org/data/2.5/weather?units=imperial&appid=' + apiKey, false);
+          req.setRequestHeader('Content-Type', 'application/json');
+          req.send(JSON.stringify(payload));
+          var response = JSON.parse(req.responseText);
+          document.getElementById('originalUrl').textContent = response.responseText;
+          document.getElementById('shortUrl').textContent = response.sys;
+          event.preventDefault();
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Weather</legend>
+        <label for="zipCode">Zip Code</label>
+        <input type="text" name="zipCode" id="zipCode">
+        <input type="submit" id="zipSubmit">
+      </fieldset>
+    </form>
+    <div>
+      <h2>Result</h2>
+      <ul>
+        <li><span>Original URL:</span><span id="originalUrl"></span></li>
+        <li><span>Short URL:</span><span id="shortUrl"></span></li>
+      </ul>
+    </div>
+  </body>
+</html>
