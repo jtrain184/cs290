@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src = "weather.js"></script>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Weather</legend>
+        <label for="zipCode">Enter City,State or Zip Code</label>
+        <input type="text" name="zipCode" id="zipInput">
+        <input type="submit" id="zipSubmit">
+      </fieldset>
+    </form>
+    <div>
+      <h2>Result</h2>
+      <ul>
+        <li><span>Weather for </span><span id="zipOutput"></span></li>
+        <li><span></span><span id="weatherInfo"></span></li>
+      </ul>
+    </div>
+  </body>
+</html>

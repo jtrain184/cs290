@@ -11,16 +11,20 @@
           var req = new XMLHttpRequest();
           var zipCode = document.getElementById('zipInput').value
           console.log('http://api.openweathermap.org/data/2.5/weather?units=imperial&appid=' + apiKey + "&zip=" + zipCode);
-          req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?units=imperial&appid=' + apiKey + "&zip=" + zipCode, false);
+          req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?units=imperial&appid=' + apiKey + "&zip=" + zipCode, true);
+          req.addEventListener('load', function(){
+            if(req.status >= 200 && req.status < 400){
+              var weatherData = JSON.parse(req.responseText);
+              document.getElementById("zipOutput").textContent = zipCode;
+              document.getElementById("weatherInfo").textContent = "City: " + weatherData.name + " " +
+                                                                   "Temp: " + weatherData.main.temp + " " +
+                                                                   "Humidity: " + weatherData.main.humidity;
+            } 
+            else {
+                  console.log("Error in network request: " + req.statusText);
+            }
+          });
           req.send(null);
-          var weatherData = JSON.parse(req.responseText);
-          console.log(req.responseText);
-          console.log(Object.keys(weatherData));
-          console.log(weatherData.main);
-          document.getElementById("zipOutput").textContent = zipCode;
-          document.getElementById("weatherInfo").textContent = "City: " + weatherData.name + " " 
-                                                               + "Temp: " + weatherData.main.temp + " "
-                                                               + "Humidity: " + weatherData.main.humidity;
           event.preventDefault();
         })
       }
