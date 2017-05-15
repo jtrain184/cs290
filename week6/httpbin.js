@@ -13,6 +13,8 @@ function bindButtons(){
       if(req.status >= 200 && req.status < 400){
         var response = JSON.parse(req.responseText);
         document.getElementById("postResponse").textContent = response.data;
+        document.getElementById("url").textContent = "URL: " + response.url;
+        document.getElementById("origin").textContent =  "Origin: " + response.origin;
       } 
       else {
             console.log("Error in network request: " + req.statusText);
