@@ -12,13 +12,13 @@ app.set('view engine', 'handlebars');
 app.set('port', 10001);
 
 app.post('/',function(req,res){
-  var context ={};
+  var context = {};
   var receivedValues = [];
   
   for (var v in req.body) {
-    receivedValues.push({'name':q, 'value' :req.body[q]});
+    receivedValues.push({'name':v, 'value' :req.body[v]});
   }
-  context.sentData = rec;
+  context.sentData = receivedValues;
   res.render('post',context);
 });
 
