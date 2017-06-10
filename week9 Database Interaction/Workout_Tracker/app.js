@@ -15,7 +15,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 12037);
 
-<<<<<<< HEAD
 app.get('/',function(req,res){
     res.render('home');
 });
@@ -23,11 +22,9 @@ app.get('/',function(req,res){
 app.get('/select',function(req,res){
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, next){
-=======
 app.get('/',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
->>>>>>> a7e3120cbf130b0611b35c117066f289f7a4b26d
     if(err){
       next(err);
       return;
