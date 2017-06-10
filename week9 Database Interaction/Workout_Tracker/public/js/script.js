@@ -23,8 +23,6 @@ function bindButtons(){
 		req.open("GET", url, false); 
 		req.addEventListener('load',function(){
 			if(req.status >= 200 && req.status < 400){
-				console.log(req.responseText); 
-				
 				//Update table
 				getCurrentData();
 			} 
@@ -49,7 +47,7 @@ function getCurrentData(){
 
 function buildTable(data){
 	console.log("buildTable	 called");
-    var workoutTable = getElementById("workouts");
+    var workoutTable = document.getElementById("workouts");
     var fields = Object.keys(data[0]);
     data.forEach(function(object){
 	    var row = document.createElement("tr");
