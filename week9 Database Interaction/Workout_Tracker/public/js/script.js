@@ -54,7 +54,7 @@ function buildTable(data){
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
 	  	cell.textContent = object[field];
-	  	if(typeof field == "id")
+	  	if(field == "id")
 	  		cell.style.display = "none";
 	  	row.appendChild(cell);
 	    });
