@@ -54,8 +54,8 @@ function buildTable(data){
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
 	  	cell.textContent = object[field];
-	  	if(typeof object[field] == "number")
-	  		cell.style.textAlign = "right";
+	  	if(typeof field == "id")
+	  		cell.style.display = "none";
 	  	row.appendChild(cell);
 	    });
 	    console.log(row);
