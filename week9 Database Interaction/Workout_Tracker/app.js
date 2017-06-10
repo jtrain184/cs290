@@ -19,7 +19,7 @@ app.get('/',function(req,res){
     res.render('home');
 });
 
-app.get('/select',function(req,res){
+app.get('/select',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, next){
     if(err){
