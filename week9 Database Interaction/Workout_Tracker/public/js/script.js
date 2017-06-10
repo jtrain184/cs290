@@ -27,12 +27,39 @@ function bindButtons(){
 				console.log(req.responseText); 
 				
 				//Update the table
-				//updateTable(); 
+				getCurrentData();
 			} 
 			else {
 				console.log("Error in network request: " + req.statusText);
 			}});				
 		req.send(null);         //no need to send additional data
 		event.preventDefault(); //prevent the page from refreshing
+	});
+}
+
+function getCurrentData(){
+	var req = new XMLHttpRequest();
+	req.open('GET', "http://flip2.engr.oregonstate.edu/:" + port + "/select", true);
+	req.setRequestHeader('Content-Type', 'application/json');
+	req.addEventListener('load',function(){
+		var response = JSON.parse(req.responseText); // This gives us the response as a variable
+		buildTable(response); //Creates the table
+	});
+	req.send(); //Send the content
+};
+
+function buildTable(data){
+    var workoutTable = getElementById("workouts");
+    var fields = Object.keys(data[0]);
+    data.forEach(function(object){
+	    var row = document.createElement("tr");
+	    fields.forEach(function(field){
+		var cell = document.createElement("td");
+	  	cell.textContent = object[field];
+	  	if(typeof object[field] == "number")
+	  		cell.style.textAlign = "right";
+	  	row.appendChild(cell);
+	    });
+	    workoutTable.appendChild(row);
 	});
 }
