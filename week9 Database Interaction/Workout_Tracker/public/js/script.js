@@ -54,6 +54,7 @@ function buildTable(data){
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
 	  	cell.textContent = object[field];
+	  	console.log(field);
 	  	if(field == "id")
 	  		cell.style.display = "none";
 	  	row.appendChild(cell);
