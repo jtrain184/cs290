@@ -51,9 +51,10 @@ function buildTable(data){
     
     var fields = Object.keys(data[0]);
     var workoutTable = document.getElementById("workouts");
-    
+
     data.forEach(function(object){
 	    var row = document.createElement("tr");
+	    row.style.textAlign = "center";
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
 	  	cell.textContent = object[field];
@@ -70,8 +71,8 @@ function buildTable(data){
 function clearTable(){
 	//Delete all but header row
 	if (document.getElementById("workouts").rows.length > 1) {
-		for (i = (document.getElementById(workouts).rows.length - 1); i > 0; i--) {
-			document.getElementById(workouts).deleteRow(i);
+		for (i = (document.getElementById("workouts").rows.length - 1); i > 0; i--) {
+			document.getElementById("workouts").deleteRow(i);
 		}
 	}
 }
