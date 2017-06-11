@@ -71,6 +71,7 @@ function buildTable(data){
 	  	row.appendChild(cell);
 	    });
 	    // Delete button
+	    var cell = document.createElement("td");
 		var delButton = document.createElement("BUTTON");
 		var text = document.createTextNode("Delete");
 		delButton.appendChild(text);
@@ -81,9 +82,11 @@ function buildTable(data){
 				deleteRow(x);
 			};
 		}(delButton.id);  
-		row.appendChild(delButton);
+		cell.appendChild(delButton);
+		row.appendChild(cell);
 		
 		//Edit button
+		var cell = document.createElement("td");
 		var editButton = document.createElement("BUTTON");
 		var text = document.createTextNode("Edit");
 		editButton.appendChild(text);
@@ -93,7 +96,8 @@ function buildTable(data){
 				editRow(x);
 			};
 		}(editButton.id); 
-		row.appendChild(editButton);
+		cell.appendChild(editButton);
+		row.appendChild(cell);
 
 	    workoutTable.appendChild(row);
 	});
