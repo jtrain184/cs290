@@ -64,6 +64,7 @@ function buildTable(data){
 	    row.style.textAlign = "center";
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
+		cell.innerHTML  = "<input type="text">";
 	  	cell.textContent = object[field];
 	  	console.log(field);
 	  	if(field == "id")
