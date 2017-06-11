@@ -89,11 +89,11 @@ function buildTable(data){
 		
 		//Edit button
 		var cell = document.createElement("td");
-		var editButton = document.createElement("BUTTON");
+		var editButton = document.createElement("INPUT");
 		var text = document.createTextNode("Edit");
 		editButton.appendChild(text);
 		editButton.id = row.firstChild.textContent;
-		cell.setAttribute("input type", "submit");
+		cell.setAttribute("type", "submit");
 		editButton.onclick = function(x){
 			return function(){
 				editRow(x);
