@@ -59,7 +59,7 @@ function buildTable(data){
     var fields = Object.keys(data[0]);
     var tableID = data["id"];
     var workoutTable = document.getElementById("workouts");
-
+    console.log(data);
     data.forEach(function(object){
 	    var row = document.createElement("tr");
 	    row.style.textAlign = "center";
@@ -68,7 +68,6 @@ function buildTable(data){
 		cell.setAttribute('id', field+tableID);
 		cell.contentEditable = "true";
 	  	cell.textContent = object[field];
-	  	console.log(field);
 	  	if(field == "id")
 	  		cell.style.display = "none";
 	  	row.appendChild(cell);
