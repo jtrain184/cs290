@@ -128,8 +128,8 @@ function editRow(id){
 	payload.lbs = '12'; 
     console.log("Passed to editRow:" + id)
     var req = new XMLHttpRequest();
-    var url = "http://flip2.engr.oregonstate.edu:" + port + "/update?" + "name=" + payload.id + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.lbs; 
-
+    var url = "http://flip2.engr.oregonstate.edu:" + port + "/update?" + "name=" + payload.name + "&id=" + payload.id + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.lbs; 
+    console.log(url);
 	req.open('GET', url, true);
 	req.addEventListener('load',function(){
 		//delete and rebuild table
