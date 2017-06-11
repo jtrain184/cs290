@@ -57,7 +57,7 @@ function buildTable(data){
 	console.log("buildTable	called");
     
     var fields = Object.keys(data[0]);
-    var tableID = fields[0];
+    var tableID = data[0];
     var workoutTable = document.getElementById("workouts");
 
     data.forEach(function(object){
