@@ -37,7 +37,7 @@ function bindButtons(){
 	    else {
 	    	var inputError = document.getElementById("error-output");
 	    	inputError.innerText = "Input a name please";
-
+            event.preventDefault();
 	    }
 	});
 }
