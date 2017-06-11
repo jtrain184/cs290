@@ -121,7 +121,7 @@ function deleteRow(id){
 function editRow(id){
 	var payload = {};
 	payload.id = id;
-	payload.name = document.getElementById("name"+id); 
+	payload.name = document.getElementById("name"+id).value; 
 	payload.reps = '12';  
 	payload.weight = '12'; 
 	payload.date = '2009-02-02'; 
