@@ -57,6 +57,7 @@ function buildTable(data){
 	console.log("buildTable	called");
     
     var fields = Object.keys(data[0]);
+    var tableID = fields[0];
     var workoutTable = document.getElementById("workouts");
 
     data.forEach(function(object){
@@ -64,6 +65,7 @@ function buildTable(data){
 	    row.style.textAlign = "center";
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
+		cell.id(field+tableID)
 		cell.contentEditable = "true";
 	  	cell.textContent = object[field];
 	  	console.log(field);
