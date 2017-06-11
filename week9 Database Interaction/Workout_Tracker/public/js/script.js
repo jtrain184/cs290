@@ -119,7 +119,24 @@ function deleteRow(id){
 }
 
 function editRow(id){
-console.log("Passed to editRow:" + id)
+	payload.id = id;
+	payload.name = 'john'; 
+	payload.reps = '12';  
+	payload.weight = '12'; 
+	payload.date = '2009-02-02'; 
+	payload.lbs = '12'; 
+    console.log("Passed to editRow:" + id)
+    var req = new XMLHttpRequest();
+    var url = "http://flip2.engr.oregonstate.edu:" + port + "/update?" + "name=" + payload.id + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.lbs; 
+
+	req.open('GET', url, true);
+	req.addEventListener('load',function(){
+		//delete and rebuild table
+		clearTable();
+		getCurrentData(); 
+	});
+	req.send(); 
+	event.preventDefault();
 
 }
 
