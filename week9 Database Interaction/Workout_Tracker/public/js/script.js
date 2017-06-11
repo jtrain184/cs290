@@ -24,6 +24,7 @@ function bindButtons(){
 		req.addEventListener('load',function(){
 			if(req.status >= 200 && req.status < 400){
 				//Update table
+				clearTable(); 
 				getCurrentData();
 			} 
 			else {
@@ -62,4 +63,11 @@ function buildTable(data){
 	    console.log(row);
 	    workoutTable.appendChild(row);
 	});
+}
+
+function clearTable(){
+	var workoutTable = document.getElementById('workouts');
+	while (workoutTable	.firstChild) {
+    workoutTable.removeChild(workoutTable.firstChild);
+    }
 }
