@@ -119,6 +119,7 @@ function deleteRow(id){
 }
 
 function editRow(id){
+	var payload = {};
 	payload.id = id;
 	payload.name = 'john'; 
 	payload.reps = '12';  
