@@ -55,11 +55,8 @@ function getCurrentData(){
 };
 
 function buildTable(data){
-	console.log("buildTable	called");
-    
     var fields = Object.keys(data[0]);
     var workoutTable = document.getElementById("workouts");
-    console.log(data);
     data.forEach(function(object){
     	var tableID = object["id"];
 	    var row = document.createElement("tr");
@@ -79,7 +76,6 @@ function buildTable(data){
 		var text = document.createTextNode("Delete");
 		delButton.appendChild(text);
 		delButton.id = row.firstChild.textContent;
-		console.log(delButton.id);
 		delButton.onclick = function(x){
 			return function(){
 				deleteRow(x);
@@ -107,7 +103,6 @@ function buildTable(data){
 }
 
 function deleteRow(id){
-    console.log("Passed to deleteRow:" + id)
 	var req = new XMLHttpRequest();
 	req.open('GET', "http://flip2.engr.oregonstate.edu:" + port + "/delete?id=" + id , true);
 	req.addEventListener('load',function(){
@@ -123,14 +118,12 @@ function editRow(id){
 	var payload = {};
 	payload.id = id;
 	payload.name = document.getElementById("name"+id).textContent; 
-	payload.reps = '12';  
-	payload.weight = '12'; 
-	payload.date = '2009-02-02'; 
-	payload.lbs = '12'; 
-    console.log("Passed to editRow:" + id)
+	payload.reps = document.getElementById("reps"+id).textContent;;  
+	payload.weight = document.getElementById("weight"+id).textContent;
+	payload.date = document.getElementById("date"+id).textContent;
+	payload.lbs = document.getElementById("lbs"+id).textContent;; 
     var req = new XMLHttpRequest();
     var url = "http://flip2.engr.oregonstate.edu:" + port + "/update?" + "name=" + payload.name + "&id=" + payload.id + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.lbs; 
-    console.log(url);
 	req.open('GET', url, true);
 	req.addEventListener('load',function(){
 		//delete and rebuild table
