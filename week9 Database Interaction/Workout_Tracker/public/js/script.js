@@ -16,6 +16,7 @@ function bindButtons(){
 		payload.date = document.getElementById('date').value; 
 		payload.lbs = document.getElementById('lbs').value; 
 		
+		if(payload.name != ""){
 		//Url for GET request
 		var url = "http://flip2.engr.oregonstate.edu:" + port + "/insert?" + "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.lbs; 
 		
@@ -32,6 +33,12 @@ function bindButtons(){
 			}});				
 		req.send(null);         //no need to send additional data
 		event.preventDefault(); //prevent the page from refreshing
+	    }
+	    else {
+	    	var inputError = document.getElementById("error-output");
+	    	inputError.innerText = "Input a name please";
+
+	    }
 	});
 }
 
@@ -81,7 +88,7 @@ function buildTable(data){
 		var text = document.createTextNode("Edit");
 		editButton.appendChild(text);
 		editButton.id = row.firstChild.textContent;
-		upBtn.onclick = function(x){
+		editButton.onclick = function(x){
 			return function(){
 				editRow(x);
 			};
