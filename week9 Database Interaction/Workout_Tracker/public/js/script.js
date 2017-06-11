@@ -119,8 +119,32 @@ function deleteRow(id){
 }
 
 function editRow(id){
-console.log("Passed to editRow:" + id)
+		var req = new XMLHttpRequest();  
+        var payload = {};
 
+		//Get form data
+		payload.name = document.getElementById('name'+id).value; 
+		payload.reps = document.getElementById('reps'+id).value;  
+		payload.weight = document.getElementById('weight'+id).value; 
+		payload.date = document.getElementById('date'+id).value; 
+		payload.lbs = document.getElementById('lbs'+id).value; 
+		
+		//Url for GET request
+		var url = "http://flip2.engr.oregonstate.edu:" + port + "/update?" + "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.lbs; 
+		
+	    //Make request
+		req.open("GET", url, false); 
+		req.addEventListener('load',function(){
+			if(req.status >= 200 && req.status < 400){
+				//Update table
+				clearTable(); 
+				getCurrentData();
+			} 
+			else {
+				console.log("Error in network request: " + req.statusText);
+			}});				
+		req.send(null);         //no need to send additional data
+		event.preventDefault(); //prevent the page from refreshing
 }
 
 function clearTable(){
