@@ -82,7 +82,7 @@ function buildTable(data){
 
 function clearTable(){
 	//Delete all but header row
-	if (document.getElementById(workouts).rows.length > 1) {
+	if (document.getElementById("workouts").rows.length > 1) {
 		for (i = (document.getElementById(workouts).rows.length - 1); i > 0; i--) {
 			document.getElementById(workouts).deleteRow(i);
 		}
