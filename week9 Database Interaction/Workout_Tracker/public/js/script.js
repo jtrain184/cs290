@@ -104,8 +104,8 @@ function buildTable(data){
 	});
 }
 
-function deleteRow(x){
-    console.log("Passed to deleteRow:" + x)
+function deleteRow(id){
+    console.log("Passed to deleteRow:" + id)
 	var req = new XMLHttpRequest();
 	req.open('GET', "http://flip2.engr.oregonstate.edu:" + port + "/delete?id=" + id , true);
 	req.addEventListener('load',function(){
