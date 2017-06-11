@@ -47,9 +47,23 @@ function getCurrentData(){
 };
 
 function buildTable(data){
-	console.log("buildTable	 called");
-    var workoutTable = document.getElementById("workouts");
+	console.log("buildTable	called");
+
+	var workoutTable = document.createElement("table");
+	workoutTable.setAttribute('id','workouts');
+	var tableWrapper = document.getElementById("table-wrapper");
+	tableWrapper.appendChild(workoutTable);
+    
     var fields = Object.keys(data[0]);
+    var headers = ["name","reps","weight","date","Units (0=kg, 1=lbs)"];
+    var headings = document.createElement("tr");
+    headers.forEach(function(header){
+        var headCell = document.createElement("th");
+        headCell.textContent = header;
+        headings.appendChild(headCell);
+    });
+    workoutTable.appendChild(headings);
+
     data.forEach(function(object){
 	    var row = document.createElement("tr");
 	    fields.forEach(function(field){
@@ -66,5 +80,6 @@ function buildTable(data){
 }
 
 function clearTable(){
-
+var table = document.getElementById('workouts');
+	table.parentNode.removeChild(table); 
 }
