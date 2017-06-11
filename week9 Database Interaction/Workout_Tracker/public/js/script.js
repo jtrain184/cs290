@@ -110,7 +110,7 @@ function deleteRow(x){
 	req.open('GET', "http://flip2.engr.oregonstate.edu:" + port + "/delete?id=" + id , true);
 	req.addEventListener('load',function(){
 		//delete and rebuild table
-		clearTable(); /
+		clearTable();
 		getCurrentData(); 
 	});
 	req.send(); 
