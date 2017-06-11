@@ -65,7 +65,7 @@ function buildTable(data){
 	    row.style.textAlign = "center";
 	    fields.forEach(function(field){
 		var cell = document.createElement("td");
-		cell.setAttribute('id', field+tableID;
+		cell.setAttribute('id', field+tableID);
 		cell.contentEditable = "true";
 	  	cell.textContent = object[field];
 	  	console.log(field);
