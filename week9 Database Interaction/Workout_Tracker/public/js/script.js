@@ -66,8 +66,5 @@ function buildTable(data){
 }
 
 function clearTable(){
-	var workoutTable = document.getElementById('workouts');
-	while (workoutTable	.firstChild) {
-    workoutTable.removeChild(workoutTable.firstChild);
-    }
+
 }
