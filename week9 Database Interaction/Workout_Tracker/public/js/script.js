@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', bindButtons);
-
+clearTable(); 
+getCurrentData();
 var port = "12037";
 
 function bindButtons(){
@@ -144,7 +145,7 @@ function editRow(id){
 				console.log("Error in network request: " + req.statusText);
 			}});				
 		req.send(null);         //no need to send additional data
-		event.preventDefault(); //prevent the page from refreshing
+
 }
 
 function clearTable(){
