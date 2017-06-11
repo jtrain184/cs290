@@ -63,9 +63,41 @@ function buildTable(data){
 	  		cell.style.display = "none";
 	  	row.appendChild(cell);
 	    });
-	    console.log(row);
+	    // Delete button
+		var delButton = document.createElement("BUTTON");
+		var text = document.createTextNode("Delete");
+		delButton.appendChild(text);
+		delButton.id = row.firstChild.textContent;
+		console.log(delButton.id);
+		delButton.onclick = function(x){
+			return function(){
+				deleteRow(x);
+			};
+		}(delButton.id);  
+		row.appendChild(delButton);
+		
+		//Edit button
+		var editButton = document.createElement("BUTTON");
+		var text = document.createTextNode("Edit");
+		editButton.appendChild(text);
+		editButton.id = row.firstChild.textContent;
+		upBtn.onclick = function(x){
+			return function(){
+				editRow(x);
+			};
+		}(editButton.id); 
+		row.appendChild(editButton);
+
 	    workoutTable.appendChild(row);
 	});
+}
+
+function deleteRow(x){
+    console.log("Passed to deleteRow:" + x)
+}
+
+function editRow(x){
+console.log("Passed to editRow:" + x)
 }
 
 function clearTable(){
