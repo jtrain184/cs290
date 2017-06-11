@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', bindButtons);
-getCurrentData();
+document.addEventListener('DOMContentLoaded', getCurrentData);
 var port = "12037";
 
 function bindButtons(){
