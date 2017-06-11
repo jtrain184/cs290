@@ -50,7 +50,8 @@ function buildTable(data){
 	console.log("buildTable	called");
     
     var fields = Object.keys(data[0]);
-
+    var workoutTable = document.getElementById("workouts");
+    
     data.forEach(function(object){
 	    var row = document.createElement("tr");
 	    fields.forEach(function(field){
