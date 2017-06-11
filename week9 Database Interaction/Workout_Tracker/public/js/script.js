@@ -77,6 +77,7 @@ function buildTable(data){
 	    console.log(row);
 	    workoutTable.appendChild(row);
 	});
+	workoutTable.className += "table-bordered";
 }
 
 function clearTable(){
